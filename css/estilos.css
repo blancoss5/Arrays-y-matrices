@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wow {
+  width: 100%;
+  height: 35vh;
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  background-position: left top;
+}
+.titulo{
+  background-color: lime;
+  position: absolute;
+  width: 10%;
+  top: 50px;
+  right: 0;
+}
+main {
+  display: flex;
+  width: 100%;
+}
+main .menu {
+  width: 25%;
+  background-color: rgba(36, 46, 28, 0.9);
+}
+main .menu button {
+  width: 100%;
+  height: 75px;
+  transition: background-color 0.5s ease;
+  transition: transform 0.5s ease;
+  background-color: rgba(36, 46, 28, 0.9);
+  border-radius: 5px;
+  cursor: pointer;
+  color: azure;
+  font-family: Pacifico;
+  font-size: 2.5rem;
+}
+main .menu button:hover {
+  transform: scale(1.2);
+}
+main .menu button:hover {
+  background-color: #a01212;
+}
+main .cuerpo {
+  width: 75%;
+  background-image: url(../img/fondo-pizarra-verde-tiza-borrador-pizarra-borro-pizarra-sucia-ilustracion_4974-167.jpg);
+  background-size: cover;
+  height: 450px;
+}
+main .cuerpo .todo {
+  background-color: #333333;
+  padding: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  display: flex;
+  border-radius: 40px;
+}
+main .cuerpo .todo .botones {
+  display: flex;
+  flex-direction: column;
+}
+main .cuerpo .todo .botones .jjj {
+  background-color: #000000;
+  border-radius: 6px;
+  width: initial !important;
+  height: initial !important;
+  font-size: initial !important;
+  color: #ffffff;
+  margin-right: initial !important;
+  margin-left: initial !important;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+main .cuerpo .todo form label {
+  font-size: 2.4rem;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+main .cuerpo .todo form input {
+  margin-top: 20px;
+  font-size: 1.4rem !important;
+  margin-bottom: 7.7px !important;
+}
+main .cuerpo .todo form #z {
+  width: 70%;
+}
+main .cuerpo .todo form input[type=submit] {
+  background-color: #000000;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  width: 40%;
+  margin-left: 4%;
+}
+main .cuerpo #tipo {
+  width: 100%;
+  padding: 15px;
+  height: 100%;
+}
+main .cuerpo #tipo button {
+  background-color: #121212;
+  color: #cccccc;
+  width: 110px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 160px;
+  margin-right: -100px;
+  border-radius: 5px;
+  font-family: cursive;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+main .cuerpo #tipo h2,
+main .cuerpo #tipo p,
+main .cuerpo #tipo label {
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+main .cuerpo #tipo label,
+main .cuerpo #tipo p {
+  font-size: 2rem;
+  margin-left: 40px;
+}
+main .cuerpo #tipo p {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+main .cuerpo #tipo input {
+  width: 80%;
+  padding: 2px 20px;
+  border: 3px solid #121212;
+  border-radius: 10px;
+  background-color: bisque;
+  margin-bottom: 4px;
+  font-size: 1.5rem;
+}
+main .cuerpo #tipo .inii {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main .cuerpo #tipo .inii h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  animation: anim 2s ease;
+}
+main .cuerpo #tipo .inii p {
+  width: 90%;
+  color: #ffffff;
+  word-wrap: break-word;
+  overflow: hidden;
+  animation: anim2 4s ease;
+}
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes anim2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main .cuerpo #tipo p {
+  width: 100%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+main .cuerpo #tipo table {
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+footer {
+  width: 100%;
+  background-color: #111111;
+  padding: 6px;
+}
+footer p {
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: Cochin;
+  color: #cccccc;
+}
+
+.padre{
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+.uno{
+  width: 100%;
+  height: 200px;
+  background-color: rgba(19, 10, 15);
+  color:white;
+  font-size: 40px;
+  position:relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 500%;
+}
+/*# sourceMappingURL=estilos.css.map */

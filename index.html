@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div class="padre">  
+        <div class="uno">
+            <h1>Vectores en JavaScript</h1>
+        </div>
+    <main>
+        <div class="menu">
+            <button onclick="prob1()">Problema 1</button>
+            <button onclick="prob2()">Problema 2</button>
+            <button onclick="prob3()">Problema 3</button>
+            <button onclick="prob4()">Problema 4</button>
+            <button onclick="prob5()">Problema 5</button>
+            <button onclick="prob6()">Problema 6</button>
+        </div>
+        <div class="cuerpo">
+            <div id="tipo">
+                <div class="inii">
+                    <h1>Bienvenido a la resolución de ejercicios de vectores en JavaScript</h1>
+                    <p>Para revisar los problemas resueltos puede elegir cualquiera de los botones disponibles en el menú izquierdo.</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>
+            Autor: Univ. Sarai Blanco Salgado<br>CI: 8438216 LP
+        </p>
+    </footer>
+
+
+    <script language="javascript" type="text/javascript">
+        aa = " <form action='#'' name='formu' method='POST'>";
+        dig1 = "<label for='x'>X</label> <input type='text' name='ela' id='x'>   <br>"
+        dig2 = "<label for='y'>N</label> <input type='text' name='elb' id='y'>   <br>";
+        ff = "</form>";
+        var V=[0,1,5,4,8,2,5];
+        
+        function prob1() {
+            
+            hh = "<h2> Teniendo el vector V, obtener la posición n-ésima, para ello utilizar Formularios y Javascript </h2>";
+
+            pp = "<p>V=["+V.toString()+"]</p>";
+            x = " <button onclick='posicion()'>Calcular</button>";
+            ress = "<button onclick='prob1()'>Reset</button>";
+            document.getElementById("tipo").innerHTML = hh + pp + aa + dig2 + x + ress + ff;
+        }
+        
+        function posicion() {
+            var s = "<p>";
+            n = document.formu.elb.value;
+            n = parseInt(n);
+            if(n<V.length){
+                s=s+V[n].toString();
+            }
+            else{
+                s=s+"Esa posición no existe";
+            }
+            s = s + "</p>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+
+        function prob2() {
+            hh = "<h2> Introducir un vector por teclado, con separación de espacios </h2>";
+            pp = "<p>Ejemplo: 1 0 2 -> W=[1,0,2]</p>";
+            x = " <button onclick='bin()'>Calcular</button>";
+            ress = "<button onclick='prob2()'>Reset</button>";
+            document.getElementById("tipo").innerHTML = hh + pp + aa +dig2 + x + ress + ff;
+        }
+
+        function binn() {
+            var n = document.formu.elb.value;
+            n = n.toString();
+            s = "<p>W=[";
+            W=n.split(" ");
+            s = s+W.toString() + "]</p>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+
+        function bin() {
+            var n = document.formu.elb.value;
+            n = n.toString();
+            s = "<p>W=[";
+            for(i=0;i<n.length;i++){
+                if(n[i].toString()!=" "){
+                    s=s+n[i];
+                }
+                else{
+                    s=s+" - ";
+                }
+            }
+            s = s.toString() + "]</p>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+
+        function prob3() {
+            hh = "<h2> Dado un vector introducido por teclado, buscar el dígito X y mostrar su posición, de no encontrarlo mostrar -1</h2>";
+            pp = "<p>Ejemplo: 1 0 2 4  y X=0 -> 1</p>";
+            x = " <button onclick='ser3()'>Calcular</button>";
+            ress = "<button onclick='prob3()'>Reset</button>";
+            document.getElementById("tipo").innerHTML = hh + pp + aa + dig2 + dig1  + x + ress + ff;
+        }
+
+        function ser3() {
+            var n = document.formu.elb.value;
+            var a= document.formu.ela.value;
+            n = n.toString();
+            s = "<p>";
+            var pos=-1;
+            W=n.split(" ");
+                for( i=0;i<W.length;i++){
+                    if(a==W[i]){ // a=1;  1=="1" - true   "1"===1 - false
+                        pos=i;
+                    }
+                }
+
+                
+            s = s +pos.toString()+ "</p>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+
+        function prob4() {
+            hh = "<h2> Dado un vector ordenarlo de forma ascendente. </h2>";
+            pp = "<p>Ejemplo.<br> Vector: 1 5 0 2 4 5 <br> Resultado: 0 1 2 4 5 5 </p>";
+            x = " <button onclick='rota()'>Calcular</button>";
+            ress = "<button onclick='prob4()'>Reset</button>";
+            document.getElementById("tipo").innerHTML = hh + pp + aa + dig2 + x + ress + ff;
+        }
+
+        function rota() {
+            var n = document.formu.elb.value;
+            n = n.toString();
+            s = "<p>W=[";
+            W=n.split(" ");
+            for(i=0;i<W.length;i++){
+                for(j=i+1;j<W.length;j++){
+                    if(W[i]>W[j]){
+                        var aux=W[j];
+                        W[j]=W[i];
+                        W[i]=aux;
+                    }
+                }
+            }
+            s = s+W.toString() + "]</p>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+
+        function prob5() {
+            hh = "<h2> Dados dos vectores, concatenarlos y ordenarlos.</h2>";
+            pp = "<p>Ejemplo.<br> Vector1: 5 4 2 3      Vector2: 1 0 2 2 <br> Resultado esperado: 0 1 2 2 2 3 4 5 </p>";
+            x = " <button onclick='repe()'>Calcular</button>";
+            ress = "<button onclick='prob5()'>Reset</button>";
+            document.getElementById("tipo").innerHTML = hh + pp + aa + dig1 + dig2 + x + ress + ff;
+        }
+
+        function repe() {
+            var n = document.formu.elb.value;
+            n = n.toString();
+            s = "<p>R=[";
+            W=n.split(" ");
+            var m = document.formu.ela.value;
+            m = m.toString();
+            Q=m.split(" ");
+            for(i=0;i<Q.length;i++){
+                W.push(Q[i]);
+            }
+
+            for(i=0;i<W.length;i++){
+                for(j=i+1;j<W.length;j++){
+                    if(W[i]>W[j]){
+                        var aux=W[j];
+                        W[j]=W[i];
+                        W[i]=aux;
+                    }
+                }
+            }
+
+            s = s+W.toString() + "]</p>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+
+       
+
+        function prob6() {
+            hh = "<h2>Generar la matriz de pascal</h2>";
+            pp = "<p></p>";
+            x = " <button onclick='matt()'>Calcular</button>";
+            ress = "<button onclick='prob6()'>Reset</button>";
+            document.getElementById("tipo").innerHTML = hh + pp + aa + dig2 + x + ress + ff;
+        }
+
+        function matt() {
+            n = document.formu.elb.value;
+            n = parseInt(n);
+            s = "<table>";
+            matr = new Array(n + 1);
+
+            for (j = 1; j <= n + 1; j++) {
+                matr[j - 1] = new Array(j + 1);
+            }
+            matr[0][0] = 1;
+            for (i = 1; i < n; i++) {
+                matr[i][0] = 1;
+                for (j = 1; j < i; j++) {
+                    matr[i][j] = matr[i-1][j-1] + matr[i-1][j];
+                }
+                matr[i][i] = 1;
+            }
+
+
+            for (i = 0; i < n; i++) {
+                s = s + "<tr>";
+                for (j = 0; j <= i; j++) {
+                    s = s + "<td>" + matr[i][j].toString() + "</td>";
+                }
+                s = s + "</tr>"
+            }
+            s = s + "</table>";
+            document.getElementById("tipo").innerHTML += s;
+        }
+    </script>
+
+</body>
+
+</html>
